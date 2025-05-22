@@ -8,7 +8,7 @@ import NavLoginRegisterBtn from "./NavLoginRegisterBtn";
 const Navbar = () => {
     return (
         <nav>
-            <div className="bg-base-100 shadow-lg">
+            <div className="bg-accent shadow-lg">
                 <div className="navbar container mx-auto">
                     <div className="navbar-start">
                     <Logo />
