@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import MoonIcon from "../Icons/MoonIcon";
 import SunIcon from "../Icons/SunIcon";
+import ThemeContext from "../../Contexts/ThemeContext";
+import useThemeContext from "../../CustomContexts/useThemeContext";
 
 const ThemeToggle = () => {
-    const [isDark, setIsDark] = useState(false)
+
+    const { isDark, handleToggle } = useThemeContext()
 
     useEffect(() => {
         document.querySelector('html').setAttribute('data-theme', isDark ? 'dark' : 'light')
     }, [isDark])
 
-    const handleToggle = () => {
-        setIsDark(!isDark)
-    }
 
     return (
-        <div>
+        <div className="mx-3">
             <label className="swap swap-rotate">
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" onChange={handleToggle} checked={isDark} />
