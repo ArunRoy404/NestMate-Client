@@ -7,7 +7,7 @@ const Footer = () => {
     const currentYear = new Date().getFullYear()
 
     return (
-        <footer className="bg-gray-900 text-white py-8 mt-auto">
+        <footer className="bg-[#202531] text-white py-8 mt-auto">
             <div className="container mx-auto px-4 grid grid-cols-1  md:grid-cols-3 gap-8">
 
                 {/* Social Media Links */}
@@ -18,13 +18,13 @@ const Footer = () => {
                     </div>
                     <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                     <div className="grid grid-flow-col gap-4 max-w-max">
-                        <a>
+                        <a className="cursor-pointer">
                             <IconTwitter />
                         </a>
-                        <a>
+                        <a className="cursor-pointer">
                             <IconYoutube />
                         </a>
-                        <a>
+                        <a className="cursor-pointer"> 
                             <IconFaceBook />
                         </a>
                     </div>
