@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SliderBanner = ({ data }) => {
-    console.log(data);
     return (
         <div
             className="slider-item bg-cover bg-center h-[600px] flex items-center justify-center text-white relative"

@@ -35,7 +35,7 @@ const router = createBrowserRouter([
                 Component: Listings
             },
             {
-                path: '/details/:id',
+                path: '/listings/:id',
                 Component: Details
             },
             {

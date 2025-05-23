@@ -23,7 +23,7 @@ const Slider = () => {
                 disableOnInteraction: false,
             }}
             modules={[EffectFade, Autoplay]}
-            className="mySwiper"
+            className="mySwiper container mx-auto"
 
         >
             {
