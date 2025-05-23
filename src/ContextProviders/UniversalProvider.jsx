@@ -1,10 +1,13 @@
+import AuthProvider from './AuthProvider';
 import ThemeProvider from './ThemeProvider';
 
 const UniversalProvider = ({ children }) => {
     return (
-        <ThemeProvider>
-            {children}
-        </ThemeProvider>
+        <AuthProvider>
+            <ThemeProvider>
+                {children}
+            </ThemeProvider>
+        </AuthProvider>
     );
 };
 

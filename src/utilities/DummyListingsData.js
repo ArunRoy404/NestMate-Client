@@ -8,13 +8,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: true,
       smoking: false,
-      nightOwl: true,
-      cleanliness: "Moderate"
+      nightOwl: true
     },
+    interests: ["Netflix", "Cooking", "Music"],
     description: "I'm looking for a friendly roommate to share my spacious 2-bedroom apartment. Great location near subway and shops.",
     contactInfo: "+1 (555) 123-4567",
     availability: "Available",
-    userName: "Sarah Mitchell",
     userEmail: "sarah@example.com",
     photoURL: "https://example.com/images/sarah.jpg ",
     likeCount: 8
@@ -28,13 +27,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: false,
       smoking: false,
-      nightOwl: false,
-      cleanliness: "Very Clean"
+      nightOwl: false
     },
+    interests: ["Reading", "Yoga", "Coffee"],
     description: "Cozy single room available in a modern apartment. Ideal for professionals who value quiet evenings.",
     contactInfo: "+1 (555) 234-5678",
     availability: "Available",
-    userName: "David Kim",
     userEmail: "david@example.com",
     photoURL: "https://example.com/images/david.jpg ",
     likeCount: 5
@@ -48,13 +46,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: false,
       smoking: true,
-      nightOwl: true,
-      cleanliness: "Moderate"
+      nightOwl: true
     },
+    interests: ["Parties", "Gaming", "Fitness"],
     description: "Furnished shared room in a lively downtown apartment. Looking for someone outgoing and easygoing.",
     contactInfo: "+1 (555) 345-6789",
     availability: "Unavailable",
-    userName: "Alex Rivera",
     userEmail: "alex@example.com",
     photoURL: "https://example.com/images/alex.jpg ",
     likeCount: 3
@@ -68,13 +65,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: true,
       smoking: false,
-      nightOwl: false,
-      cleanliness: "Very Clean"
+      nightOwl: false
     },
+    interests: ["Hiking", "Books", "Tea"],
     description: "Calm and tidy apartment. I enjoy reading and hiking. Looking for someone respectful and tidy.",
     contactInfo: "+1 (555) 456-7890",
     availability: "Available",
-    userName: "Emily Chen",
     userEmail: "emily@example.com",
     photoURL: "https://example.com/images/emily.jpg ",
     likeCount: 7
@@ -88,13 +84,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: true,
       smoking: false,
-      nightOwl: true,
-      cleanliness: "Moderate"
+      nightOwl: true
     },
+    interests: ["Movies", "Chill", "Gym"],
     description: "Spacious apartment with two bedrooms. Seeking a fun and responsible roommate. Netflix and chill welcome!",
     contactInfo: "+1 (555) 567-8901",
     availability: "Unavailable",
-    userName: "James Carter",
     userEmail: "james@example.com",
     photoURL: "https://example.com/images/james.jpg ",
     likeCount: 6
@@ -108,13 +103,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: false,
       smoking: false,
-      nightOwl: false,
-      cleanliness: "Very Clean"
+      nightOwl: false
     },
+    interests: ["Studying", "Art", "Walking"],
     description: "Looking for a roommate to share a luxury apartment. Quiet neighborhood, close to universities.",
     contactInfo: "+1 (555) 678-9012",
     availability: "Available",
-    userName: "Olivia Moore",
     userEmail: "olivia@example.com",
     photoURL: "https://example.com/images/olivia.jpg ",
     likeCount: 4
@@ -128,13 +122,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: true,
       smoking: true,
-      nightOwl: true,
-      cleanliness: "Moderate"
+      nightOwl: true
     },
+    interests: ["Nature", "Music", "Dogs"],
     description: "A laid-back space with a dog-friendly policy. Looking for a roommate who loves nature and music.",
     contactInfo: "+1 (555) 789-0123",
     availability: "Available",
-    userName: "Liam Nguyen",
     userEmail: "liam@example.com",
     photoURL: "https://example.com/images/liam.jpg ",
     likeCount: 2
@@ -148,13 +141,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: false,
       smoking: true,
-      nightOwl: true,
-      cleanliness: "Moderate"
+      nightOwl: true
     },
+    interests: ["Nightlife", "Travel", "Fashion"],
     description: "Luxury high-rise apartment. Looking for someone who enjoys nightlife and city life.",
     contactInfo: "+1 (555) 890-1234",
     availability: "Unavailable",
-    userName: "Noah Patel",
     userEmail: "noah@example.com",
     photoURL: "https://example.com/images/noah.jpg ",
     likeCount: 5
@@ -168,13 +160,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: false,
       smoking: false,
-      nightOwl: false,
-      cleanliness: "Very Clean"
+      nightOwl: false
     },
+    interests: ["Writing", "Meditation", "Plants"],
     description: "Ideal for introverts or remote workers. Peaceful environment and lots of natural light.",
     contactInfo: "+1 (555) 901-2345",
     availability: "Available",
-    userName: "Sophia Lee",
     userEmail: "sophia@example.com",
     photoURL: "https://example.com/images/sophia.jpg ",
     likeCount: 6
@@ -188,13 +179,12 @@ const listingsData = [
     lifestylePreferences: {
       pets: true,
       smoking: false,
-      nightOwl: true,
-      cleanliness: "Moderate"
+      nightOwl: true
     },
+    interests: ["Study Groups", "Biking", "BBQ"],
     description: "Great for students. Close to campus and many amenities nearby. Looking for someone sociable.",
     contactInfo: "+1 (555) 012-3456",
     availability: "Unavailable",
-    userName: "Ethan Brooks",
     userEmail: "ethan@example.com",
     photoURL: "https://example.com/images/ethan.jpg ",
     likeCount: 4

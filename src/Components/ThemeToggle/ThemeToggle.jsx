@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import MoonIcon from "../Icons/MoonIcon";
 import SunIcon from "../Icons/SunIcon";
-import ThemeContext from "../../Contexts/ThemeContext";
 import useThemeContext from "../../CustomContexts/useThemeContext";
 
 const ThemeToggle = () => {
