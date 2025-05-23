@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-// import { notifyError, notifySuccess } from '../utilities/notify';
 import useAuthContext from '../CustomContexts/UseAuthContext';
 import { FcGoogle } from "react-icons/fc";
+import { notifyError, notifySuccess } from '../utilities/notidy';
+
 
 
 
 const Login = () => {
-    const { logIn, googleLogIn, reloadUser, user } = useAuthContext()
-    console.log(user);
+    const { logIn, googleLogIn } = useAuthContext()
 
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
@@ -20,6 +20,8 @@ const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
+
+
 
 
     const handleLogin = (e) => {
@@ -34,13 +36,12 @@ const Login = () => {
         logIn(email, password)
             .then(() => {
                 setSuccess('Login Successful')
-                // notifySuccess('Login Successful')
-                reloadUser()
+                notifySuccess('Login Successful')
                 navigate(location.state || '/')
             })
             .catch(error => {
                 setError(error.code)
-                // notifyError('Login Failed')
+                notifyError('Login Failed')
             })
             .finally(() => {
                 setIsLogInBtnLoading(false)
@@ -55,13 +56,13 @@ const Login = () => {
         googleLogIn()
             .then(() => {
                 setSuccess('Login Successful')
-                // notifySuccess('Login Successful')
-                reloadUser()
+                notifySuccess('Login Successful')
                 navigate(location.state || '/')
             })
             .catch(error => {
                 setError(error.code)
-                // notifyError("Login failed!")
+                console.log("ok");
+                notifyError("Login failed!")
             })
             .finally(() => {
                 setIsGoogleBtnLoading(false)
