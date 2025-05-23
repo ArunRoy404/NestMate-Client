@@ -4,7 +4,7 @@ import AuthContext from '../Contexts/AuthContext/AuthContext';
 import { auth } from '../Firebase/firebase.config';
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState(null)
+    const [loggedUser, setUser] = useState(null)
     const [isUserLoading, setIsUserLoading] = useState(true)
 
     const googleProvider = new GoogleAuthProvider()
@@ -58,8 +58,8 @@ const AuthProvider = ({ children }) => {
         }
     }, [])
 
-    const userInfo = {
-        user,
+    const firebase = {
+        loggedUser,
         isUserLoading,
         googleLogIn,
         createUser,
@@ -71,7 +71,7 @@ const AuthProvider = ({ children }) => {
     }
 
     return (
-        <AuthContext value={userInfo}>
+        <AuthContext value={firebase}>
             {children}
         </AuthContext>
     );
