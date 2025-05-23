@@ -3,9 +3,8 @@ import DatabaseContext from '../Contexts/DatabaseContext/DatabaseContext';
 import useAuthContext from '../CustomContexts/UseAuthContext';
 
 const DatabaseProvider = ({ children }) => {
-    const [userDB, setUserDB] = useState({})
-    const { loggedUser } = useAuthContext();
-
+    const [user, setUser] = useState({})
+    const { loggedUser, logOut } = useAuthContext();
     useEffect(() => {
         if (loggedUser?.displayName && loggedUser?.photoURL) {
 
@@ -29,14 +28,14 @@ const DatabaseProvider = ({ children }) => {
                                     findUser(loggedUser?.uid)
                                         .then(res => res.json())
                                         .then(data => {
-                                            setUserDB(data[0])
+                                            setUser(data[0])
                                         })
 
                                 }
                             })
                     }
                     else {
-                        setUserDB(data[0])
+                        setUser(data[0])
                     }
                 })
         }
@@ -57,8 +56,14 @@ const DatabaseProvider = ({ children }) => {
         return fetch(`https://nest-mate-server.vercel.app/users/${firebase_uid}`)
     }
 
+    const logOutUser = () => {
+        logOut()
+        setUser(null)
+    }
+
     const database = {
-        userDB
+        user,
+        logOutUser
     }
 
     return (

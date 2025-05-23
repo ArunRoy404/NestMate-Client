@@ -1,11 +1,15 @@
 import { Link } from "react-router";
+import useDatabaseContext from "../../CustomContexts/UseDatabaseContext";
 
 const Avatar = () => {
+
+    const { user, logOutUser } = useDatabaseContext()
+
     return (
         <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                 <div className="w-10 rounded-full">
-                    <img src="https://img.daisyui.com/images/profile/demo/yellingcat@192.webp" />
+                    <img src={user?.photoURL} />
                 </div>
             </div>
             <ul
@@ -16,7 +20,7 @@ const Avatar = () => {
                         View Profile
                     </Link>
                 </li>
-                <li><a>Logout</a></li>
+                <li><a onClick={() => logOutUser()} >Logout</a></li>
             </ul>
         </div>
     );

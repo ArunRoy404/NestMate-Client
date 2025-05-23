@@ -59,7 +59,6 @@ const Login = () => {
             })
             .catch(error => {
                 setError(error.code)
-                console.log("ok");
                 notifyError("Login failed!")
             })
             .finally(() => {
