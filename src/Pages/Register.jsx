@@ -10,7 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 
 
 const Register = () => {
-    const { createUser, updateUserProfile, reloadUser, googleLogIn } = useAuthContext()
+    const { createUser, updateUserProfile, googleLogIn, reloadUser } = useAuthContext()
 
     const [success, setSuccess] = useState('')
     const [error, setError] = useState('')
@@ -75,7 +75,6 @@ const Register = () => {
             .then(() => {
                 setSuccess('Login Successful')
                 notifySuccess('Login Successful')
-                reloadUser()
                 navigate(location.state || '/')
             })
             .catch(error => {

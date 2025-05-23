@@ -4,7 +4,7 @@ import AuthContext from '../Contexts/AuthContext/AuthContext';
 import { auth } from '../Firebase/firebase.config';
 
 const AuthProvider = ({ children }) => {
-    const [loggedUser, setUser] = useState(null)
+    const [loggedUser, setLoggedUser] = useState(null)
     const [isUserLoading, setIsUserLoading] = useState(true)
 
     const googleProvider = new GoogleAuthProvider()
@@ -25,8 +25,9 @@ const AuthProvider = ({ children }) => {
 
     const reloadUser = async () => {
         setIsUserLoading(true)
-        await auth.currentUser.reload().then(() => { setIsUserLoading(false) })
-        setUser({ ...auth.currentUser })
+        await auth.currentUser.reload()
+            .then(() => { setIsUserLoading(false) })
+        setLoggedUser({ ...auth.currentUser })
     }
 
     const googleLogIn = () => {
@@ -46,9 +47,9 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser) {
-                setUser({ ...currentUser })
+                setLoggedUser({ ...currentUser })
             } else {
-                setUser(null)
+                setLoggedUser(null)
             }
             setIsUserLoading(false)
         })
