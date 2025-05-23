@@ -9,7 +9,7 @@ const ListingCard = ({ data }) => {
             <div className="p-7">
 
                 {/* image  */}
-                <img className='h-50 w-full object-center object-cover rounded-xl mb-4' src="https://hips.hearstapps.com/hmg-prod/images/photo-by-kevin-lam-01-652da9b105778.jpg" alt="" />
+                <img className='h-50 w-full object-center object-cover rounded-xl mb-4' src={data.photoURL} alt="" />
 
                 {/* Title */}
                 <h3 className="text-xl font-semibold">{data.title}</h3>

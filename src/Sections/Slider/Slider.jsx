@@ -19,7 +19,7 @@ const Slider = () => {
             grabCursor={true}
             effect={'fade'}
             autoplay={{
-                delay: 4000,
+                delay: 3000,
                 disableOnInteraction: false,
             }}
             modules={[EffectFade, Autoplay]}

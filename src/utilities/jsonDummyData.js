@@ -1,0 +1,192 @@
+[
+  {
+    "user_id": "6830e1a1d79dec38cfc82a27",
+    "title": "Looking for Roommate in Brooklyn, NYC",
+    "location": "Brooklyn, New York",
+    "rentAmount": 1200,
+    "roomType": "Shared Room",
+    "lifestylePreferences": {
+      "pets": true,
+      "smoking": false,
+      "nightOwl": true
+    },
+    "interests": ["Netflix", "Cooking", "Music"],
+    "description": "I'm looking for a friendly roommate to share my spacious 2-bedroom apartment. Great location near subway and shops.",
+    "contactInfo": "+1 (555) 123-4567",
+    "availability": "Available",
+    "userEmail": "sarah@example.com",
+    "photoURL": "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg= ",
+    "likeCount": 8
+  },
+  {
+    "user_id": "6830e1a1d79dec38cfc82a27",
+    "title": "Affordable Room in San Francisco",
+    "location": "Mission District, San Francisco",
+    "rentAmount": 950,
+    "roomType": "Single Room",
+    "lifestylePreferences": {
+      "pets": false,
+      "smoking": false,
+      "nightOwl": false
+    },
+    "interests": ["Reading", "Yoga", "Coffee"],
+    "description": "Cozy single room available in a modern apartment. Ideal for professionals who value quiet evenings.",
+    "contactInfo": "+1 (555) 234-5678",
+    "availability": "Available",
+    "userEmail": "david@example.com",
+    "photoURL": "https://hips.hearstapps.com/hmg-prod/images/photo-by-kevin-lam-01-652da9b105778.jpg ",
+    "likeCount": 5
+  },
+  {
+    "user_id": "6830e1a1d79dec38cfc82a27",
+    "title": "Downtown LA Roommate Needed",
+    "location": "Downtown Los Angeles",
+    "rentAmount": 1100,
+    "roomType": "Shared Room",
+    "lifestylePreferences": {
+      "pets": false,
+      "smoking": true,
+      "nightOwl": true
+    },
+    "interests": ["Parties", "Gaming", "Fitness"],
+    "description": "Furnished shared room in a lively downtown apartment. Looking for someone outgoing and easygoing.",
+    "contactInfo": "+1 (555) 345-6789",
+    "availability": "Unavailable",
+    "userEmail": "alex@example.com",
+    "photoURL": "https://img.freepik.com/free-photo/cozy-living-room-modern-apartment_181624-58445.jpg ",
+    "likeCount": 3
+  },
+  {
+    "user_id": "6830e1a1d79dec38cfc82a27",
+    "title": "Peaceful Roommate Needed in Seattle",
+    "location": "Capitol Hill, Seattle",
+    "rentAmount": 1050,
+    "roomType": "Single Room",
+    "lifestylePreferences": {
+      "pets": true,
+      "smoking": false,
+      "nightOwl": false
+    },
+    "interests": ["Hiking", "Books", "Tea"],
+    "description": "Calm and tidy apartment. I enjoy reading and hiking. Looking for someone respectful and tidy.",
+    "contactInfo": "+1 (555) 456-7890",
+    "availability": "Available",
+    "userEmail": "emily@example.com",
+    "photoURL": "https://media.istockphoto.com/id/1344083240/photo/modern-living-room.jpg?s=612x612&w=0&k=20&c=yyaXPu8ENPlzOtDuhmbiqbvTU-DoTnmPyRwQ-ro7h0k= ",
+    "likeCount": 7
+  },
+  {
+    "user_id": "6830e1a1d79dec38cfc82a27",
+    "title": "Apartment Share in Chicago",
+    "location": "Lakeview, Chicago",
+    "rentAmount": 1300,
+    "roomType": "Single Room",
+    "lifestylePreferences": {
+      "pets": true,
+      "smoking": false,
+      "nightOwl": true
+    },
+    "interests": ["Movies", "Chill", "Gym"],
+    "description": "Spacious apartment with two bedrooms. Seeking a fun and responsible roommate. Netflix and chill welcome!",
+    "contactInfo": "+1 (555) 567-8901",
+    "availability": "Unavailable",
+    "userEmail": "james@example.com",
+    "photoURL": "https://d28pk2nlhhgcne.cloudfront.net/assets/app/uploads/sites/3/2022/11/modern-studio-apartment-1220x671.jpg ",
+    "likeCount": 6
+  },
+  {
+    "user_id": "6830e4bed79dec38cfc82a2e",
+    "title": "Modern Apartment in Boston",
+    "location": "Back Bay, Boston",
+    "rentAmount": 1400,
+    "roomType": "Single Room",
+    "lifestylePreferences": {
+      "pets": false,
+      "smoking": false,
+      "nightOwl": false
+    },
+    "interests": ["Studying", "Art", "Walking"],
+    "description": "Looking for a roommate to share a luxury apartment. Quiet neighborhood, close to universities.",
+    "contactInfo": "+1 (555) 678-9012",
+    "availability": "Available",
+    "userEmail": "olivia@example.com",
+    "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn :ANd9GcSpN0kKafZGq2bMEZnmT4q-W6XtzXXgtArDFQ&s",
+    "likeCount": 4
+  },
+  {
+    "user_id": "6830e4bed79dec38cfc82a2e",
+    "title": "Cozy Home in Denver",
+    "location": "Capitol Hill, Denver",
+    "rentAmount": 900,
+    "roomType": "Shared Room",
+    "lifestylePreferences": {
+      "pets": true,
+      "smoking": true,
+      "nightOwl": true
+    },
+    "interests": ["Nature", "Music", "Dogs"],
+    "description": "A laid-back space with a dog-friendly policy. Looking for a roommate who loves nature and music.",
+    "contactInfo": "+1 (555) 789-0123",
+    "availability": "Available",
+    "userEmail": "liam@example.com",
+    "photoURL": "https://www.zillow.com/los-angeles-ca/luxury-apartments/3_p/ ",
+    "likeCount": 2
+  },
+  {
+    "user_id": "6830e4bed79dec38cfc82a2e",
+    "title": "Room for Rent in Downtown Miami",
+    "location": "Downtown Miami",
+    "rentAmount": 1500,
+    "roomType": "Single Room",
+    "lifestylePreferences": {
+      "pets": false,
+      "smoking": true,
+      "nightOwl": true
+    },
+    "interests": ["Nightlife", "Travel", "Fashion"],
+    "description": "Luxury high-rise apartment. Looking for someone who enjoys nightlife and city life.",
+    "contactInfo": "+1 (555) 890-1234",
+    "availability": "Available",
+    "userEmail": "noah@example.com",
+    "photoURL": "https://ca-times.brightspotcdn.com/dims4/default/fdcbb46/2147483647/strip/true/crop/6000x4000+0+0/resize/2000x1333 !/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F7b%2F17%2F1768c9a848ff919162a3897fe090%2F1441331-me-figueroa-eight03-brv.jpg",
+    "likeCount": 5
+  },
+  {
+    "user_id": "6830e4bed79dec38cfc82a2e",
+    "title": "Quiet Room in Portland",
+    "location": "Pearl District, Portland",
+    "rentAmount": 1000,
+    "roomType": "Single Room",
+    "lifestylePreferences": {
+      "pets": false,
+      "smoking": false,
+      "nightOwl": false
+    },
+    "interests": ["Writing", "Meditation", "Plants"],
+    "description": "Ideal for introverts or remote workers. Peaceful environment and lots of natural light.",
+    "contactInfo": "+1 (555) 901-2345",
+    "availability": "Available",
+    "userEmail": "sophia@example.com",
+    "photoURL": "https://i.pinimg.com/736x/54/b6/18/54b61886e7d4850ec05309dc931c8a67.jpg ",
+    "likeCount": 6
+  },
+  {
+    "user_id": "6830e4bed79dec38cfc82a2e",
+    "title": "Student-Friendly Room in Austin",
+    "location": "University Neighborhood, Austin",
+    "rentAmount": 800,
+    "roomType": "Shared Room",
+    "lifestylePreferences": {
+      "pets": true,
+      "smoking": false,
+      "nightOwl": true
+    },
+    "interests": ["Study Groups", "Biking", "BBQ"],
+    "description": "Great for students. Close to campus and many amenities nearby. Looking for someone sociable.",
+    "contactInfo": "+1 (555) 012-3456",
+    "availability": "Unavailable",
+    "userEmail": "ethan@example.com",
+    "photoURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn :ANd9GcT9QiPYT89ko8mIcGD79NLy_oTZjpxlfz4kp7o4_5xJQNoCU9aehkzrOvJN0lsMHCXAupA&usqp=CAU",
+    "likeCount": 4
+  }
+]

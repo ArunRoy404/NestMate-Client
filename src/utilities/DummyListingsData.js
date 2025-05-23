@@ -1,6 +1,6 @@
 const listingsData = [
   {
-    _id: "1",
+    firebase_uid: "eMSu8mBBs9SjSKxQX4UFLLmZsF92",
     title: "Looking for Roommate in Brooklyn, NYC",
     location: "Brooklyn, New York",
     rentAmount: 1200,
@@ -15,11 +15,11 @@ const listingsData = [
     contactInfo: "+1 (555) 123-4567",
     availability: "Available",
     userEmail: "sarah@example.com",
-    photoURL: "https://example.com/images/sarah.jpg ",
+    photoURL: "https://media.istockphoto.com/id/1398814566/photo/interior-of-small-apartment-living-room-for-home-office.jpg?s=612x612&w=0&k=20&c=8clwg8hTpvoEwL7253aKdYAUuAp1-usFOacNR5qX-Rg=",
     likeCount: 8
   },
   {
-    _id: "2",
+    firebase_uid: "eMSu8mBBs9SjSKxQX4UFLLmZsF92",
     title: "Affordable Room in San Francisco",
     location: "Mission District, San Francisco",
     rentAmount: 950,
@@ -34,11 +34,11 @@ const listingsData = [
     contactInfo: "+1 (555) 234-5678",
     availability: "Available",
     userEmail: "david@example.com",
-    photoURL: "https://example.com/images/david.jpg ",
+    photoURL: "https://hips.hearstapps.com/hmg-prod/images/photo-by-kevin-lam-01-652da9b105778.jpg",
     likeCount: 5
   },
   {
-    _id: "3",
+    firebase_uid: "eMSu8mBBs9SjSKxQX4UFLLmZsF92",
     title: "Downtown LA Roommate Needed",
     location: "Downtown Los Angeles",
     rentAmount: 1100,
@@ -53,11 +53,11 @@ const listingsData = [
     contactInfo: "+1 (555) 345-6789",
     availability: "Unavailable",
     userEmail: "alex@example.com",
-    photoURL: "https://example.com/images/alex.jpg ",
+    photoURL: "https://img.freepik.com/free-photo/cozy-living-room-modern-apartment_181624-58445.jpg ",
     likeCount: 3
   },
   {
-    _id: "4",
+    firebase_uid: "eMSu8mBBs9SjSKxQX4UFLLmZsF92",
     title: "Peaceful Roommate Needed in Seattle",
     location: "Capitol Hill, Seattle",
     rentAmount: 1050,
@@ -72,11 +72,11 @@ const listingsData = [
     contactInfo: "+1 (555) 456-7890",
     availability: "Available",
     userEmail: "emily@example.com",
-    photoURL: "https://example.com/images/emily.jpg ",
+    photoURL: "https://media.istockphoto.com/id/1344083240/photo/modern-living-room.jpg?s=612x612&w=0&k=20&c=yyaXPu8ENPlzOtDuhmbiqbvTU-DoTnmPyRwQ-ro7h0k= ",
     likeCount: 7
   },
   {
-    _id: "5",
+    firebase_uid: "eMSu8mBBs9SjSKxQX4UFLLmZsF92",
     title: "Apartment Share in Chicago",
     location: "Lakeview, Chicago",
     rentAmount: 1300,
@@ -91,11 +91,11 @@ const listingsData = [
     contactInfo: "+1 (555) 567-8901",
     availability: "Unavailable",
     userEmail: "james@example.com",
-    photoURL: "https://example.com/images/james.jpg ",
+    photoURL: "https://d28pk2nlhhgcne.cloudfront.net/assets/app/uploads/sites/3/2022/11/modern-studio-apartment-1220x671.jpg",
     likeCount: 6
   },
   {
-    _id: "6",
+    firebase_uid: "fJfEpfhvoUUrTtugbkSLWZbLJuj1",
     title: "Modern Apartment in Boston",
     location: "Back Bay, Boston",
     rentAmount: 1400,
@@ -110,11 +110,11 @@ const listingsData = [
     contactInfo: "+1 (555) 678-9012",
     availability: "Available",
     userEmail: "olivia@example.com",
-    photoURL: "https://example.com/images/olivia.jpg ",
+    photoURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpN0kKafZGq2bMEZnmT4q-W6XtzXXgtArDFQ&s",
     likeCount: 4
   },
   {
-    _id: "7",
+    firebase_uid: "fJfEpfhvoUUrTtugbkSLWZbLJuj1",
     title: "Cozy Home in Denver",
     location: "Capitol Hill, Denver",
     rentAmount: 900,
@@ -129,11 +129,11 @@ const listingsData = [
     contactInfo: "+1 (555) 789-0123",
     availability: "Available",
     userEmail: "liam@example.com",
-    photoURL: "https://example.com/images/liam.jpg ",
+    photoURL: "https://www.zillow.com/los-angeles-ca/luxury-apartments/3_p/ ",
     likeCount: 2
   },
   {
-    _id: "8",
+    firebase_uid: "fJfEpfhvoUUrTtugbkSLWZbLJuj1",
     title: "Room for Rent in Downtown Miami",
     location: "Downtown Miami",
     rentAmount: 1500,
@@ -146,13 +146,13 @@ const listingsData = [
     interests: ["Nightlife", "Travel", "Fashion"],
     description: "Luxury high-rise apartment. Looking for someone who enjoys nightlife and city life.",
     contactInfo: "+1 (555) 890-1234",
-    availability: "Unavailable",
+    availability: "Available",
     userEmail: "noah@example.com",
-    photoURL: "https://example.com/images/noah.jpg ",
+    photoURL: "https://ca-times.brightspotcdn.com/dims4/default/fdcbb46/2147483647/strip/true/crop/6000x4000+0+0/resize/2000x1333!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F7b%2F17%2F1768c9a848ff919162a3897fe090%2F1441331-me-figueroa-eight03-brv.jpg",
     likeCount: 5
   },
   {
-    _id: "9",
+    firebase_uid: "fJfEpfhvoUUrTtugbkSLWZbLJuj1",
     title: "Quiet Room in Portland",
     location: "Pearl District, Portland",
     rentAmount: 1000,
@@ -167,11 +167,11 @@ const listingsData = [
     contactInfo: "+1 (555) 901-2345",
     availability: "Available",
     userEmail: "sophia@example.com",
-    photoURL: "https://example.com/images/sophia.jpg ",
+    photoURL: "https://i.pinimg.com/736x/54/b6/18/54b61886e7d4850ec05309dc931c8a67.jpg",
     likeCount: 6
   },
   {
-    _id: "10",
+    firebase_uid: "fJfEpfhvoUUrTtugbkSLWZbLJuj1",
     title: "Student-Friendly Room in Austin",
     location: "University Neighborhood, Austin",
     rentAmount: 800,
@@ -186,7 +186,7 @@ const listingsData = [
     contactInfo: "+1 (555) 012-3456",
     availability: "Unavailable",
     userEmail: "ethan@example.com",
-    photoURL: "https://example.com/images/ethan.jpg ",
+    photoURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9QiPYT89ko8mIcGD79NLy_oTZjpxlfz4kp7o4_5xJQNoCU9aehkzrOvJN0lsMHCXAupA&usqp=CAU",
     likeCount: 4
   }
 ];

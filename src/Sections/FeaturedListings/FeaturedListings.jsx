@@ -1,7 +1,29 @@
+import { useEffect, useState } from "react";
 import ListingCard from "../../Components/Listings/ListingCard";
-import listingsData from "../../utilities/DummyListingsData";
+import Loader from "../../Components/Loader/Loader";
 
 const FeaturedListings = () => {
+
+    const [listings, setListings] = useState([])
+    const [isLoading, setIsLoading] = useState(false)
+
+    useEffect(() => {
+        setIsLoading(true)
+        fetch('https://nest-mate-server.vercel.app/limited-listings')
+            .then(res => res.json())
+            .then(data => {
+                setListings(data)
+                setIsLoading(false)
+            })
+    }, [])
+
+    if (isLoading) {
+        return (
+            <div className="w-full h-80 flex items-center justify-center">
+                <Loader />
+            </div>
+        )
+    }
 
     return (
         <section className="mt-20 py-10">
@@ -11,7 +33,7 @@ const FeaturedListings = () => {
             </div>
             <div className="container mx-auto grid grid-cols-3 gap-10">
                 {
-                    listingsData.slice(0, 6).map((data, index) => <ListingCard key={index} data={data}></ListingCard>)
+                    listings.map((data, index) => <ListingCard key={index} data={data}></ListingCard>)
                 }
             </div>
         </section>
