@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ListingCard from "../../Components/Listings/ListingCard";
-import Loader from "../../Components/Loader/Loader";
+import Loader from "../../Components/Loaders/Loader";
+
 
 const FeaturedListings = () => {
 

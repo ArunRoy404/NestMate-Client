@@ -2,9 +2,7 @@ import React from 'react';
 
 const Loader = () => {
     return (
-        <div>
-            loader 
-        </div>
+        <span className="loading loading-spinner loading-xl"></span>
     );
 };
 

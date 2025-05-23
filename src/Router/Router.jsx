@@ -8,6 +8,7 @@ import Details from '../Pages/Details';
 import ErrorPage from '../Pages/ErrorPage';
 import AddFindRoommate from '../Pages/AddFindRoommate';
 import MyListings from '../Pages/MyListings';
+import LoaderPage from '../Components/Loaders/LoaderPage';
 
 const router = createBrowserRouter([
     {
@@ -32,7 +33,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/listings',
-                Component: Listings
+                Component: Listings,
             },
             {
                 path: '/listings/:id',
