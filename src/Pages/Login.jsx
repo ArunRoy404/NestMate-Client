@@ -4,7 +4,8 @@ import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 import useAuthContext from '../CustomContexts/UseAuthContext';
 import { FcGoogle } from "react-icons/fc";
-import { notifyError, notifySuccess } from '../utilities/notidy';
+import { notifyError, notifySuccess } from '../utilities/notify';
+import LoginContent from '../Components/LoginContent';
 
 
 
@@ -20,9 +21,6 @@ const Login = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-
-
-
 
     const handleLogin = (e) => {
         e.preventDefault()
@@ -71,16 +69,11 @@ const Login = () => {
 
 
     return (
-        <div className='flex lg:py-10'>
-            <div className="flex flex-col lg:flex-row space-y-10 flex-1 items-center justify-around mb-10 ">
-                <div className='hidden md:block'>
-                    <h1 className='text-6xl font-normal mb-3' >
-                        <span className='font-bold'>Nest</span>Mate
-                    </h1>
-                    <h2 className='md:text-3xl font-bold opacity-70'>
-                        Your next home starts here.
-                    </h2>
-                </div>
+        <div className='container mx-auto flex lg:py-10'>
+            <div className="flex flex-col lg:flex-row space-y-10 flex-1 items-center justify-between mb-10 ">
+
+                <LoginContent />
+
                 <div className="w-full  md:w-auto">
                     <div className="card bg-accent md:w-lg shrink-0 shadow-2xl border-1 border-gray-500 ">
                         <div className="card-body">
