@@ -8,7 +8,7 @@ const MainLayout = () => {
         <>
             <Toaster position="top-center" reverseOrder={false}></Toaster>
             <Navbar />
-            <main className="min-h-[calc(100vh-300px-76px)] py-15">
+            <main className="container mx-auto min-h-[calc(100vh-324px-76px)] py-15">
                 <Outlet />
             </main>
             <Footer />

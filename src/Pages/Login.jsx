@@ -69,7 +69,7 @@ const Login = () => {
 
 
     return (
-        <div className='container mx-auto flex lg:py-10'>
+        <div className='flex lg:py-10'>
             <div className="flex flex-col lg:flex-row space-y-10 flex-1 items-center justify-between mb-10 ">
 
                 <LoginContent />
