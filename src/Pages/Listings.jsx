@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Loader from '../Components/Loaders/Loader';
 import ListingCard from '../Components/Listings/ListingCard';
 import { Typewriter } from 'react-simple-typewriter';
+import ListingTableBrowse from '../Components/Listings/ListingTableBrowse';
 
 
 const Listings = () => {
@@ -40,11 +41,10 @@ const Listings = () => {
                     />
                 </p>
             </div>
-            <div className="container mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {
-                    [...listings].reverse().map((data, index) => <ListingCard key={index} data={data}></ListingCard>)
-                }
-            </div>
+            <ListingTableBrowse
+                listings={listings}
+                isLoading={isLoading}
+            />
         </div>
     );
 };
