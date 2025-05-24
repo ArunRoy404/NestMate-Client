@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import ThemeContext from "../Contexts/ThemeContext/ThemeContext";
-import { getTheme, setTheme } from "../utilities/themeLocalstore";
+import { getTheme, setTheme } from "../utilities/localStoreTheme";
+
 
 const ThemeProvider = ({ children }) => {
     const [isDark, setIsDark] = useState(false)
@@ -8,15 +9,15 @@ const ThemeProvider = ({ children }) => {
 
     useEffect(() => {
         const theme = getTheme()
-        if(theme === 'dark'){
+        if (theme === 'dark') {
             setIsDark(true)
         }
     }, [])
 
     useEffect(() => {
-        if(isDark){
+        if (isDark) {
             setTheme('dark')
-        }else{
+        } else {
             setTheme('light')
         }
     }, [isDark])
