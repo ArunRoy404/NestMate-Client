@@ -6,7 +6,10 @@ import { Toaster } from 'react-hot-toast';
 const MainLayout = () => {
     return (
         <>
-            <Toaster position="top-center" reverseOrder={false}></Toaster>
+            <Toaster t
+                containerStyle={{ zIndex: 999999 }}
+                position="top-center"
+                reverseOrder={false}></Toaster>
             <Navbar />
             <main className="container mx-auto min-h-[calc(100vh-324px-76px)] py-15">
                 <Outlet />

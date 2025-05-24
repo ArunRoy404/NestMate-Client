@@ -8,7 +8,7 @@ import Details from '../Pages/Details';
 import ErrorPage from '../Pages/ErrorPage';
 import AddFindRoommate from '../Pages/AddFindRoommate';
 import MyListings from '../Pages/MyListings';
-import LoaderPage from '../Components/Loaders/LoaderPage';
+import UpdateListing from '../Pages/UpdateListing';
 
 const router = createBrowserRouter([
     {
@@ -42,6 +42,9 @@ const router = createBrowserRouter([
             {
                 path: '/my-listings',
                 Component: MyListings
+            },{
+                path: '/listings/update/:id',
+                Component: UpdateListing
             }
         ]
     },

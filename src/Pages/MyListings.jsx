@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Loader from '../Components/Loaders/Loader';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import ListingsTable from '../Components/Listings/ListingsTable';
 import { notifySuccess } from '../utilities/notify';

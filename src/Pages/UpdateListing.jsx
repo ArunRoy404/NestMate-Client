@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+import Swal from 'sweetalert2'
 import useThemeContext from '../CustomContexts/useThemeContext';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import { notifySuccess } from '../utilities/notify';
+import { useParams } from 'react-router';
 
-const AddFindRoommate = () => {
+const UpdateListing = () => {
     const { isDark } = useThemeContext()
-    const { user, addListing } = useDatabaseContext()
+    const { updateListing, findListing } = useDatabaseContext()
+    const { id } = useParams()
 
     const initialFormData = {
         user_id: "",
@@ -27,6 +31,13 @@ const AddFindRoommate = () => {
     }
 
     const [formData, setFormData] = useState(initialFormData);
+    useEffect(() => {
+        findListing(id)
+            .then(res => res.json())
+            .then(data => {
+                setFormData(data)
+            })
+    }, [findListing, id])
 
 
     const handleChange = (e) => {
@@ -55,32 +66,32 @@ const AddFindRoommate = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        formData.user_id = user.firebase_uid
 
-        addListing(formData)
+        const { _id, ...updateData } = formData
+
+        updateListing(_id, updateData)
             .then(res => res.json())
             .then(data => {
-                if (data.insertedId) {
-                    notifySuccess('Listing added successfully')
-                    setFormData(initialFormData)
+                console.log(data);
+                if (data.modifiedCount) {
+                    notifySuccess('Listing updated successfully')
+                    Swal.fire("SweetAlert2 is working!");
                 }
             })
-
-        console.log(formData);
     };
 
     return (
         <div className={`p-6 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded shadow-xl mt-10`}>
-            <h2 className="text-2xl font-bold mb-6 text-center">Add Your Roommate Listing</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Update Your Roommate Listing</h2>
 
             {
-                formData.photoURL
+                formData?.photoURL
                     ? <img
                         src={formData?.photoURL}
                         className="w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6"
                     />
 
-                    : <div className={`${isDark ?'bg-gray-700' :'bg-base-200'} w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6 flex items-center justify-center`}>
+                    : <div className={`${isDark ? 'bg-gray-700' : 'bg-base-200'} w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6 flex items-center justify-center`}>
                         provide photoURL to load your apartment image
                     </div>
             }
@@ -92,7 +103,7 @@ const AddFindRoommate = () => {
                     <input
                         type="text"
                         name="title"
-                        value={formData.title}
+                        value={formData?.title}
                         onChange={handleChange}
                         required
                         placeholder="e.g. Downtown LA Roommate Needed"
@@ -105,7 +116,7 @@ const AddFindRoommate = () => {
                     <input
                         type="url"
                         name="photoURL"
-                        value={formData.photoURL}
+                        value={formData?.photoURL}
                         onChange={handleChange}
                         placeholder="https://example.com/apartment-photo.jpg"
                         className="1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -117,7 +128,7 @@ const AddFindRoommate = () => {
                     <input
                         type="text"
                         name="location"
-                        value={formData.location}
+                        value={formData?.location}
                         onChange={handleChange}
                         required
                         placeholder="e.g. Downtown Los Angeles"
@@ -131,7 +142,7 @@ const AddFindRoommate = () => {
                     <input
                         type="number"
                         name="rentAmount"
-                        value={formData.rentAmount}
+                        value={formData?.rentAmount}
                         onChange={handleChange}
                         required
                         min="0"
@@ -145,7 +156,7 @@ const AddFindRoommate = () => {
                     <label className="block text-sm font-medium opacity-80">Room Type</label>
                     <select
                         name="roomType"
-                        value={formData.roomType}
+                        value={formData?.roomType}
                         onChange={handleChange}
                         className="mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     >
@@ -160,7 +171,7 @@ const AddFindRoommate = () => {
                     <input
                         type="text"
                         name="interests"
-                        value={formData.interests.join(',')}
+                        value={formData?.interests?.join(',')}
                         onChange={handleChange}
                         placeholder="e.g. Parties, Gaming, Fitness"
                         className="mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
@@ -175,7 +186,7 @@ const AddFindRoommate = () => {
                             <input
                                 type="checkbox"
                                 name="pets"
-                                checked={formData.lifestylePreferences.pets}
+                                checked={formData?.lifestylePreferences?.pets}
                                 onChange={handleChange}
                                 className="rounded text-blue-600 focus:ring-blue-500"
                             />
@@ -185,7 +196,7 @@ const AddFindRoommate = () => {
                             <input
                                 type="checkbox"
                                 name="smoking"
-                                checked={formData.lifestylePreferences.smoking}
+                                checked={formData?.lifestylePreferences?.smoking}
                                 onChange={handleChange}
                                 className="rounded text-blue-600 focus:ring-blue-500"
                             />
@@ -195,7 +206,7 @@ const AddFindRoommate = () => {
                             <input
                                 type="checkbox"
                                 name="nightOwl"
-                                checked={formData.lifestylePreferences.nightOwl}
+                                checked={formData?.lifestylePreferences?.nightOwl}
                                 onChange={handleChange}
                                 className="rounded text-blue-600 focus:ring-blue-500"
                             />
@@ -211,7 +222,7 @@ const AddFindRoommate = () => {
                     <input
                         type="text"
                         name="contactInfo"
-                        value={formData.contactInfo}
+                        value={formData?.contactInfo}
                         onChange={handleChange}
                         required
                         placeholder="Phone number or other contact method"
@@ -224,7 +235,7 @@ const AddFindRoommate = () => {
                     <label className="block text-sm font-medium opacity-80">Availability</label>
                     <select
                         name="availability"
-                        value={formData.availability}
+                        value={formData?.availability}
                         onChange={handleChange}
                         className="mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     >
@@ -238,7 +249,7 @@ const AddFindRoommate = () => {
                     <label className="block text-sm font-medium opacity-80">Description</label>
                     <textarea
                         name="description"
-                        value={formData.description}
+                        value={formData?.description}
                         onChange={handleChange}
                         rows="4"
                         placeholder="Describe the room, apartment, or what kind of roommate you're looking for."
@@ -250,14 +261,17 @@ const AddFindRoommate = () => {
                 <div className="pt-4 col-span-2">
                     <button
                         type="submit"
-                        className="w-full bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
+                        className="cursor-pointer w-full bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
                     >
-                        Add Roommate Listing
+                        Update listing
                     </button>
                 </div>
+            </form>
+            <form method="dialog">
+                <button className="btn mt-5 btn-neutral w-full">Close</button>
             </form>
         </div>
     );
 };
 
-export default AddFindRoommate;
+export default UpdateListing;

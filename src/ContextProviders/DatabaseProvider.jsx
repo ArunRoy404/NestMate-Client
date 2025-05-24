@@ -66,6 +66,10 @@ const DatabaseProvider = ({ children }) => {
         })
     }
 
+    const findListing = (id) => {
+        return fetch(`https://nest-mate-server.vercel.app/listings/${id}`)
+    }
+
     const updateListing = (id, data) => {
         return fetch(`https://nest-mate-server.vercel.app/listings/${id}`, {
             method: 'PUT',
@@ -91,6 +95,7 @@ const DatabaseProvider = ({ children }) => {
         user,
         logOutUser,
         addListing,
+        findListing,
         updateListing,
         deleteListing
     }
