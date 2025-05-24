@@ -5,11 +5,11 @@ import Home from '../Pages/Home';
 import Register from '../Pages/Register';
 import Listings from '../Pages/Listings';
 import Details from '../Pages/Details';
-import ErrorPage from '../Pages/ErrorPage';
 import AddFindRoommate from '../Pages/AddFindRoommate';
 import MyListings from '../Pages/MyListings';
 import UpdateListing from '../Pages/UpdateListing';
 import PrivateRoute from '../PrivateRoute/PrivateRoute';
+import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 
 const router = createBrowserRouter([
     {
