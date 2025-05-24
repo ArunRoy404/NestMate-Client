@@ -31,7 +31,6 @@ const Navbar = () => {
                                 : <NavLoginRegisterBtn />
                         }
                         <NavDropDown />
-
                     </div>
                 </div>
             </div>
