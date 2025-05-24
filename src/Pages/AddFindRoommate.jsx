@@ -72,16 +72,16 @@ const AddFindRoommate = () => {
     };
 
     return (
-        <div className={`p-6 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded shadow-xl mt-10`}>
+        <div className={`p-6 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded shadow-xl m-2`}>
             <h2 className="text-2xl font-bold mb-6 text-center">Add Your Roommate Listing</h2>
             {
                 formData.photoURL
                     ? <img
                         src={formData?.photoURL}
-                        className="w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6"
+                        className="w-full h-40 md:h-60 object-cover object-center rounded-lg shadow-xl mb-6"
                     />
 
-                    : <div className={`${isDark ? 'bg-gray-700' : 'bg-base-200'} w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6 flex items-center justify-center`}>
+                    : <div className={`${isDark ? 'bg-gray-700' : 'bg-base-200'} w-full h-40 md:h-60 object-cover object-center rounded-lg shadow-xl mb-6 flex items-center justify-center`}>
                         provide photoURL to load your apartment image
                     </div>
             }

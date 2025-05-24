@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import useThemeContext from '../CustomContexts/useThemeContext';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
-import { notifySuccess } from '../utilities/notify';
+import { notifySuccess, notifyWarn } from '../utilities/notify';
 import { useNavigate, useParams } from 'react-router';
 import Swal from 'sweetalert2';
 import Loader from '../Components/Loaders/Loader';
@@ -47,15 +47,14 @@ const UpdateListing = () => {
         if (user?.firebase_uid && formData?.user_id) {
             if (user.firebase_uid !== formData.user_id) {
                 Swal.fire({
-                    title: "You logged in with another account!",
-                    text: "You will be redirected to Your Listings page.",
+                    title: "Different account detected!",
+                    text: "You don't have access to update other's listing. You will be redirected to Your Listings page.",
                     icon: "warning"
                 })
                 navigate('/my-listings')
             }
         }
     }, [user, formData, navigate])
-
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
@@ -92,13 +91,15 @@ const UpdateListing = () => {
             .then(data => {
                 if (data.modifiedCount) {
                     notifySuccess('Listing updated successfully')
+                }else{
+                    notifyWarn("No changes made")
                 }
                 setIsLoading(false)
             })
     };
 
     return (
-        <div className={`p-6 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded shadow-xl mt-10`}>
+        <div className={`p-6 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded shadow-xl m-2`}>
             <h2 className="text-2xl font-bold mb-6 text-center">Update Your Roommate Listing</h2>
 
             {
@@ -298,8 +299,6 @@ const UpdateListing = () => {
                     />
                 </div>
 
-
-
                 <div className="pt-4 col-span-2">
                     <button
                         type="submit"
@@ -310,9 +309,6 @@ const UpdateListing = () => {
                         Update listing
                     </button>
                 </div>
-            </form>
-            <form method="dialog">
-                <button className="btn mt-5 btn-neutral w-full">Close</button>
             </form>
         </div>
     );

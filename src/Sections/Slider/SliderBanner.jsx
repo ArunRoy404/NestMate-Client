@@ -3,7 +3,7 @@ import React from 'react';
 const SliderBanner = ({ data }) => {
     return (
         <div
-            className="slider-item bg-cover bg-center h-[600px] flex items-center justify-center text-white relative"
+            className="slider-item bg-cover bg-center h-[calc(100vh-76px)] md:h-[400px] lg:h-[600px] flex items-center justify-center text-white relative"
             style={{ backgroundImage: `url(${data.img})` }}
         >
 

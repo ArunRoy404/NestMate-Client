@@ -12,8 +12,8 @@ const Logo = ({ logo }) => {
 
     return (
         <div className='flex items-center justify-center max-w-max'>
-            <img className='w-15' src={defaultLogo ? defaultLogo : isDark ?NestLight :NestDark} alt="" />
-            <h1 className='text-2xl font-bold'>Nest<span className='font-normal'>Mate</span></h1>
+            <img className='w-10 md:w-15' src={defaultLogo ? defaultLogo : isDark ?NestLight :NestDark} alt="" />
+            <h1 className='text-xl md:text-2xl font-bold'>Nest<span className='font-normal'>Mate</span></h1>
         </div>
     );
 };

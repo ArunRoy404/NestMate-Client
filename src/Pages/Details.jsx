@@ -64,10 +64,7 @@ const Details = () => {
                         setIsLikeLoading(false)
                     })
             })
-
-        // Call API to update likeCount here
         setLiked(true);
-
     };
 
     if (isLoading) {
@@ -95,16 +92,16 @@ const Details = () => {
             <img
                 src={listing?.photoURL}
                 alt="Listing"
-                className="w-full h-100 object-cover object-center rounded-lg shadow-xl mb-6"
+                className="w-full h-40 md:h-100 object-cover object-center rounded-lg shadow-xl mb-6"
             />
 
-            <div className='flex gap-10'>
+            <div className='md:flex gap-10'>
                 {/* availability  */}
                 <div className="flex-1 bg-accent border-1 rounded-xl border-black/40 mb-6 shadow-xl p-5">
                     {
                         listing?.availability === 'Available'
-                            ? <p className='bg-green-100 px-5 py-1 max-w-max rounded-md text-green-800 font-semibold'>Available</p>
-                            : <p className='bg-red-100 px-5 py-1 max-w-max rounded-md text-red-800 font-semibold'>Unavailable</p>
+                            ? <p className='bg-green-100 text-sm md:text-auto px-5 py-1 max-w-max rounded-md text-green-800 font-semibold'>Available</p>
+                            : <p className='bg-red-100 text-sm md:text-auto px-5 py-1 max-w-max rounded-md text-red-800 font-semibold'>Unavailable</p>
                     }
                     {/* location  */}
                     <h1 className='flex items-center gap-2 mt-2'><CiLocationOn /> {listing?.location}</h1>
@@ -121,7 +118,7 @@ const Details = () => {
                 </div>
 
                 {/* post owner info  */}
-                <div className="w-70 bg-accent border-1 rounded-xl border-black/40 mb-6 shadow-xl p-5 space-y-5">
+                <div className="md:w-70 bg-accent border-1 rounded-xl border-black/40 mb-6 shadow-xl p-5 space-y-5">
                     <h1 className='font-semibold'>Post Owner</h1>
                     {
                         isPostOwnerLoading
@@ -191,7 +188,7 @@ const Details = () => {
                 <h2 className="text-xl font-semibold mb-2">Interests</h2>
                 <ul className="flex flex-wrap gap-2 list-disc">
                     {
-                        listing?.interests.length < 1
+                        listing?.interests?.length < 1
                             ? <p className="badge bg-red-100 text-red-800 px-3 py-1 rounded">none</p>
                             : ''
                     }

@@ -14,7 +14,7 @@ const Navbar = () => {
         <nav className="sticky top-0 z-100">
             <div className="bg-accent shadow-lg">
                 <div className="navbar container mx-auto">
-                    <div className="navbar-start">
+                    <div className="navbar-start ">
                         <Logo />
                     </div>
                     <div className="navbar-center hidden lg:flex">

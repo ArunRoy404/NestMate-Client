@@ -88,7 +88,7 @@ const Register = () => {
 
 
     return (
-        <div className='flex lg:py-10'>
+        <div className='flex px-4 py-10'>
             <div className="flex flex-col lg:flex-row space-y-10 flex-1 items-center justify-around mb-10 ">
 
                 <LoginContent />
