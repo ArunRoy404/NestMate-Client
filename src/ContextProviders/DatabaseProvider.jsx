@@ -56,6 +56,16 @@ const DatabaseProvider = ({ children }) => {
         return fetch(`https://nest-mate-server.vercel.app/users/${firebase_uid}`)
     }
 
+    const updateListing = (id, data) => {
+        return fetch(`http://localhost:3000/listings/${id}`, {
+            method: 'PUT',
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+    }
+
     const logOutUser = () => {
         logOut()
         setUser(null)
@@ -63,7 +73,8 @@ const DatabaseProvider = ({ children }) => {
 
     const database = {
         user,
-        logOutUser
+        logOutUser,
+        updateListing
     }
 
     return (
