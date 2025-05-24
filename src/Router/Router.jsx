@@ -9,6 +9,7 @@ import ErrorPage from '../Pages/ErrorPage';
 import AddFindRoommate from '../Pages/AddFindRoommate';
 import MyListings from '../Pages/MyListings';
 import UpdateListing from '../Pages/UpdateListing';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/add-find-roommate',
-                Component: AddFindRoommate
+                element: <PrivateRoute><AddFindRoommate></AddFindRoommate></PrivateRoute>
             },
             {
                 path: '/listings',
@@ -37,14 +38,14 @@ const router = createBrowserRouter([
             },
             {
                 path: '/listings/:id',
-                Component: Details,
+                element: <PrivateRoute><Details></Details></PrivateRoute>
             },
             {
                 path: '/my-listings',
-                Component: MyListings
-            },{
+                element: <PrivateRoute><MyListings></MyListings></PrivateRoute>
+            }, {
                 path: '/listings/update/:id',
-                Component: UpdateListing
+                element: <PrivateRoute><UpdateListing></UpdateListing></PrivateRoute>
             }
         ]
     },

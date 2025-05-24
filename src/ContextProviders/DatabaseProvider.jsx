@@ -4,6 +4,7 @@ import useAuthContext from '../CustomContexts/UseAuthContext';
 
 const DatabaseProvider = ({ children }) => {
     const [user, setUser] = useState({})
+
     const { loggedUser, logOut } = useAuthContext();
     useEffect(() => {
         if (loggedUser?.displayName && loggedUser?.photoURL) {

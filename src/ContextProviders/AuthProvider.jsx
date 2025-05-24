@@ -26,8 +26,11 @@ const AuthProvider = ({ children }) => {
     const reloadUser = async () => {
         setIsUserLoading(true)
         await auth.currentUser.reload()
-            .then(() => { setIsUserLoading(false) })
-        setLoggedUser({ ...auth.currentUser })
+            .then(() => {
+                setLoggedUser({ ...auth.currentUser })
+                setIsUserLoading(false)
+            })
+
     }
 
     const googleLogIn = () => {

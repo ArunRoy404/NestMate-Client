@@ -43,7 +43,7 @@ const ListingTableRow = ({ listing, handleDeleteListing }) => {
                 }
             </td>
             <td className="flex items-center px-6 py-4">
-                <Link to={`/listings/update/${listing._id}`}><button className="cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline">Update</button></Link>
+                <Link to={`/listings/update/${listing._id}`} className="cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline">Update</Link>
                 <button onClick={() => handleDeleteListing(listing._id)} className="cursor-pointer font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Delete</button>
             </td>
         </tr>

@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import useThemeContext from '../CustomContexts/useThemeContext';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import { notifySuccess } from '../utilities/notify';
-import { useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
+import Swal from 'sweetalert2';
 
 const UpdateListing = () => {
     const { isDark } = useThemeContext()
     const { updateListing, findListing, user } = useDatabaseContext()
     const { id } = useParams()
+
+    const navigate = useNavigate()
 
     const initialFormData = {
         user_id: "",
@@ -29,6 +32,7 @@ const UpdateListing = () => {
     }
 
     const [formData, setFormData] = useState(initialFormData);
+
     useEffect(() => {
         findListing(id)
             .then(res => res.json())
@@ -36,6 +40,19 @@ const UpdateListing = () => {
                 setFormData(data)
             })
     }, [findListing, id])
+
+    useEffect(() => {
+        if (user?.firebase_uid && formData?.user_id) {
+            if (user.firebase_uid !== formData.user_id) {
+                Swal.fire({
+                    title: "You logged in with another account!",
+                    text: "You will be redirected to Your Listings page.",
+                    icon: "warning"
+                })
+                navigate('/my-listings')
+            }
+        }
+    }, [user, formData, navigate])
 
 
     const handleChange = (e) => {
@@ -257,7 +274,7 @@ const UpdateListing = () => {
                     <input
                         type="text"
                         name="contactInfo"
-                        defaultValue={user ? user.name :''}
+                        defaultValue={user ? user.name : ''}
                         required
                         disabled
                         placeholder="Phone number or other contact method"
@@ -269,14 +286,14 @@ const UpdateListing = () => {
                     <input
                         type="text"
                         name="contactInfo"
-                        defaultValue={user ? user.email :''}
+                        defaultValue={user ? user.email : ''}
                         required
                         disabled
                         placeholder="Phone number or other contact method"
                         className="disabled:cursor-not-allowed disabled:opacity-40 mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     />
                 </div>
-                
+
 
 
                 <div className="pt-4 col-span-2">

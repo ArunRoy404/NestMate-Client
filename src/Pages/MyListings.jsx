@@ -11,7 +11,7 @@ const MyListings = () => {
     const { user, deleteListing } = useDatabaseContext()
 
     useEffect(() => {
-        if (user.firebase_uid) {
+        if (user?.firebase_uid) {
             setIsLoading(true)
             fetch(`https://nest-mate-server.vercel.app/users/${user.firebase_uid}/listings`)
                 .then(res => res.json())
