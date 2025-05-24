@@ -48,7 +48,7 @@ const ListingCard = ({ data }) => {
 
                 {/* See Details Button */}
                 <Link to={`/listings/${data._id}`} className="block w-full text-center bg-violet-500 hover:bg-violet-600 text-white font-semibold py-2 px-4 rounded transition duration-200">
-                    See Details
+                    See More
                 </Link>
             </div>
         </div>

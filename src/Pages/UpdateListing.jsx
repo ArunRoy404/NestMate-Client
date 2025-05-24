@@ -4,11 +4,13 @@ import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import { notifySuccess } from '../utilities/notify';
 import { useNavigate, useParams } from 'react-router';
 import Swal from 'sweetalert2';
+import Loader from '../Components/Loaders/Loader';
 
 const UpdateListing = () => {
     const { isDark } = useThemeContext()
     const { updateListing, findListing, user } = useDatabaseContext()
     const { id } = useParams()
+    const [isLoading, setIsLoading] = useState(false)
 
     const navigate = useNavigate()
 
@@ -81,6 +83,7 @@ const UpdateListing = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true)
 
         const { _id, ...updateData } = formData
 
@@ -90,6 +93,7 @@ const UpdateListing = () => {
                 if (data.modifiedCount) {
                     notifySuccess('Listing updated successfully')
                 }
+                setIsLoading(false)
             })
     };
 
@@ -299,8 +303,10 @@ const UpdateListing = () => {
                 <div className="pt-4 col-span-2">
                     <button
                         type="submit"
-                        className="cursor-pointer w-full bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
+                        disabled={isLoading}
+                        className="w-full disabled:opacity-40 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
                     >
+                        {isLoading ?<span className='mr-5'><Loader /></span> :''}
                         Update listing
                     </button>
                 </div>

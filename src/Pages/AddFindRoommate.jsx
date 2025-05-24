@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import useThemeContext from '../CustomContexts/useThemeContext';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import { notifySuccess } from '../utilities/notify';
+import Loader from '../Components/Loaders/Loader';
 
 const AddFindRoommate = () => {
     const { isDark } = useThemeContext()
     const { user, addListing } = useDatabaseContext()
+    const [isLoading, setIsLoading] = useState(false)
 
     const initialFormData = {
         user_id: "",
@@ -55,6 +57,7 @@ const AddFindRoommate = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setIsLoading(true)
         formData.user_id = user.firebase_uid
 
         addListing(formData)
@@ -64,15 +67,13 @@ const AddFindRoommate = () => {
                     notifySuccess('Listing added successfully')
                     setFormData(initialFormData)
                 }
+                setIsLoading(false)
             })
-
-        console.log(formData);
     };
 
     return (
         <div className={`p-6 ${isDark ? 'bg-gray-800' : 'bg-white'} rounded shadow-xl mt-10`}>
             <h2 className="text-2xl font-bold mb-6 text-center">Add Your Roommate Listing</h2>
-
             {
                 formData.photoURL
                     ? <img
@@ -80,7 +81,7 @@ const AddFindRoommate = () => {
                         className="w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6"
                     />
 
-                    : <div className={`${isDark ?'bg-gray-700' :'bg-base-200'} w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6 flex items-center justify-center`}>
+                    : <div className={`${isDark ? 'bg-gray-700' : 'bg-base-200'} w-full h-60 object-cover object-center rounded-lg shadow-xl mb-6 flex items-center justify-center`}>
                         provide photoURL to load your apartment image
                     </div>
             }
@@ -246,12 +247,39 @@ const AddFindRoommate = () => {
                     ></textarea>
                 </div>
 
+                <div>
+                    <label className="block text-sm font-medium opacity-80">User Name</label>
+                    <input
+                        type="text"
+                        name="contactInfo"
+                        defaultValue={user ? user.name : ''}
+                        required
+                        disabled
+                        placeholder="Phone number or other contact method"
+                        className="disabled:cursor-not-allowed disabled:opacity-40 mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium opacity-80">User Email</label>
+                    <input
+                        type="text"
+                        name="contactInfo"
+                        defaultValue={user ? user.email : ''}
+                        required
+                        disabled
+                        placeholder="Phone number or other contact method"
+                        className="disabled:cursor-not-allowed disabled:opacity-40 mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                </div>
+
 
                 <div className="pt-4 col-span-2">
                     <button
                         type="submit"
-                        className="w-full bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
+                        disabled={isLoading}
+                        className="w-full disabled:opacity-40 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2 px-4 rounded transition duration-200"
                     >
+                        {isLoading ? <span className='ml-5'><Loader /></span> : ''}
                         Add Roommate Listing
                     </button>
                 </div>
