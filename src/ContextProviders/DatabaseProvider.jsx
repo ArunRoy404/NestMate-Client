@@ -66,6 +66,12 @@ const DatabaseProvider = ({ children }) => {
         })
     }
 
+    const deleteListing = (id)=>{
+        return fetch(`https://nest-mate-server.vercel.app/listings/${id}`,{
+            method: 'DELETE'
+        })
+    }
+
     const logOutUser = () => {
         logOut()
         setUser(null)
@@ -74,7 +80,8 @@ const DatabaseProvider = ({ children }) => {
     const database = {
         user,
         logOutUser,
-        updateListing
+        updateListing,
+        deleteListing
     }
 
     return (

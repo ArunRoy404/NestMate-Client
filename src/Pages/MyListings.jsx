@@ -2,12 +2,13 @@ import { useEffect, useState } from 'react';
 import Loader from '../Components/Loaders/Loader';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import ListingsTable from '../Components/Listings/ListingsTable';
+import { notifySuccess } from '../utilities/notify';
 
 const MyListings = () => {
     const [listings, setListings] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const { user } = useDatabaseContext()
 
+    const { user, deleteListing } = useDatabaseContext()
 
     useEffect(() => {
         if (user.firebase_uid) {
@@ -21,12 +22,16 @@ const MyListings = () => {
         }
     }, [user])
 
-    if (isLoading) {
-        return (
-            <div className="w-full h-80 flex items-center justify-center">
-                <Loader />
-            </div>
-        )
+    const handleDeleteListing = (id) => {
+        deleteListing(id)
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount) {
+                    setListings(listings.filter(listing => listing._id !== id))
+                    notifySuccess('Listing Deleted Successfully')
+
+                }
+            })
     }
 
     return (
@@ -37,7 +42,12 @@ const MyListings = () => {
                     Update, delete, or view details of your listings.
                 </p>
             </div>
-            <ListingsTable listings={listings} />
+            <ListingsTable
+                listings={listings}
+                setListings={setListings}
+                isLoading={isLoading}
+                handleDeleteListing={handleDeleteListing}
+            />
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import useThemeContext from "../../CustomContexts/useThemeContext";
 
-const ListingTableRow = ({ listing }) => {
+const ListingTableRow = ({ listing, handleDeleteListing }) => {
     const { isDark } = useThemeContext()
 
     const lifeStyle = []
@@ -12,6 +12,8 @@ const ListingTableRow = ({ listing }) => {
             lifeStyle.push('no smoking')
         }
     }
+
+
 
 
     return (
@@ -43,8 +45,8 @@ const ListingTableRow = ({ listing }) => {
                 }
             </td>
             <td className="flex items-center px-6 py-4">
-                <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Update</a>
-                <a href="#" className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Delete</a>
+                <button className="cursor-pointer font-medium text-blue-600 dark:text-blue-500 hover:underline">Update</button>
+                <button onClick={() => handleDeleteListing(listing._id)} className="cursor-pointer font-medium text-red-600 dark:text-red-500 hover:underline ms-3">Delete</button>
             </td>
         </tr>
     );

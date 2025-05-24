@@ -1,9 +1,24 @@
 import useThemeContext from "../../CustomContexts/useThemeContext";
+import Loader from "../Loaders/Loader";
 import ListingTableRow from "./ListingTableRow";
 
-const ListingsTable = ({ listings }) => {
+const ListingsTable = ({ listings, isLoading, handleDeleteListing }) => {
 
     const { isDark } = useThemeContext()
+
+    const showLoader = (
+        <tr>
+            <td colSpan={8} className="w-full h-80 ">
+                <div className="flex items-center justify-center">
+                    <Loader />
+                </div>
+            </td>
+        </tr>
+    )
+
+    const tableData = (
+        listings.map(listing => <ListingTableRow key={listing._id} listing={listing}  handleDeleteListing={handleDeleteListing}/>)
+    )
 
     return (
         <div className="relative overflow-x-auto box-shadow shadow-sm sm:rounded-lg">
@@ -39,8 +54,12 @@ const ListingsTable = ({ listings }) => {
                 <tbody>
 
                     {
-                        listings.map(listing => <ListingTableRow key={listing._id} listing={listing} />)
+                        isLoading
+                            ? showLoader
+                            : tableData
                     }
+
+
 
                 </tbody>
             </table>
