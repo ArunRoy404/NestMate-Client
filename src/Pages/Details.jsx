@@ -40,7 +40,7 @@ const Details = () => {
                     setIsPostOwnerLoading(false)
                 })
         }
-    }, [listing])
+    }, [listing, postOwner])
 
     const postOwnerInfo = (
         <div className='flex items-center gap-4'>

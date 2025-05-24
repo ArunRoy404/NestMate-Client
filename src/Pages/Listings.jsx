@@ -42,7 +42,7 @@ const Listings = () => {
             </div>
             <div className="container mx-auto grid grid-cols-3 gap-10">
                 {
-                    listings.map((data, index) => <ListingCard key={index} data={data}></ListingCard>)
+                    [...listings].reverse().map((data, index) => <ListingCard key={index} data={data}></ListingCard>)
                 }
             </div>
         </div>

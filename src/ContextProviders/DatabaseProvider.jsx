@@ -56,6 +56,16 @@ const DatabaseProvider = ({ children }) => {
         return fetch(`https://nest-mate-server.vercel.app/users/${firebase_uid}`)
     }
 
+    const addListing = (data) => {
+        return fetch(`https://nest-mate-server.vercel.app/listings/`, {
+            method: 'POST',
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(data)
+        })
+    }
+
     const updateListing = (id, data) => {
         return fetch(`https://nest-mate-server.vercel.app/listings/${id}`, {
             method: 'PUT',
@@ -66,8 +76,8 @@ const DatabaseProvider = ({ children }) => {
         })
     }
 
-    const deleteListing = (id)=>{
-        return fetch(`https://nest-mate-server.vercel.app/listings/${id}`,{
+    const deleteListing = (id) => {
+        return fetch(`https://nest-mate-server.vercel.app/listings/${id}`, {
             method: 'DELETE'
         })
     }
@@ -80,6 +90,7 @@ const DatabaseProvider = ({ children }) => {
     const database = {
         user,
         logOutUser,
+        addListing,
         updateListing,
         deleteListing
     }

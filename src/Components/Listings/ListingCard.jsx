@@ -2,10 +2,14 @@ import { Link } from 'react-router';
 import { CiLocationOn } from "react-icons/ci";
 import { FaBed, FaHeart, FaRegHeart } from "react-icons/fa";
 import LifeStyle from './LifeStyle';
+import useThemeContext from '../../CustomContexts/useThemeContext';
 
 const ListingCard = ({ data }) => {
+
+    const { isDark } = useThemeContext()
+
     return (
-        <div className="bg-primary shadow-xl rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-2xl duration-300">
+        <div className={` ${isDark ?'bg-gray-800' :''} shadow-xl rounded-lg overflow-hidden transition transform hover:scale-105 hover:shadow-2xl duration-300`}>
             <div className="p-7">
 
                 {/* image  */}
