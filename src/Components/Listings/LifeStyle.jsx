@@ -16,13 +16,13 @@ const LifeStyle = ({ lifestylePreferences }) => {
                 {lifestylePreferences.smoking ? (
                     <div>
                         <span data-tooltip-id="listing-tooltip" data-tooltip-content="Smoking Allowed" className="smoking badge bg-red-100 text-red-800 px-2 py-1 rounded text-xs">
-                            🚭 Smoking
+                            🚬 Smoking
                         </span>
                     </div>
                 ) : (
                     <div>
                         <span data-tooltip-id="listing-tooltip" data-tooltip-content="Non-Smoking Environment" className="no-smoking badge bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs">
-                            ❌ No Smoking
+                            🚭 No Smoking
                         </span>
                     </div>
                 )}

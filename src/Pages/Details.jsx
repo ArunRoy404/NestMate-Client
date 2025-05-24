@@ -178,9 +178,9 @@ const Details = () => {
                 <div className="flex flex-wrap gap-2">
                     {listing?.lifestylePreferences?.pets && <span className="badge bg-green-100 text-green-800 px-3 py-1 rounded">🐾 Pets Allowed</span>}
                     {listing?.lifestylePreferences?.smoking ? (
-                        <span className="badge bg-red-100 text-red-800 px-3 py-1 rounded">🚭 Smoking Allowed</span>
+                        <span className="badge bg-red-100 text-red-800 px-3 py-1 rounded">🚬 Smoking Allowed</span>
                     ) : (
-                        <span className="badge bg-blue-100 text-blue-800 px-3 py-1 rounded">❌ No Smoking</span>
+                        <span className="badge bg-blue-100 text-blue-800 px-3 py-1 rounded">🚭 No Smoking</span>
                     )}
                     {listing?.lifestylePreferences?.nightOwl && <span className="badge bg-purple-100 text-purple-800 px-3 py-1 rounded">🕶️ Night Owl Friendly</span>}
                 </div>
@@ -190,6 +190,11 @@ const Details = () => {
             <div className="bg-accent border-1 rounded-xl border-black/40 mb-6 shadow-xl p-5">
                 <h2 className="text-xl font-semibold mb-2">Interests</h2>
                 <ul className="flex flex-wrap gap-2 list-disc">
+                    {
+                        listing?.interests.length < 1
+                            ? <p className="badge bg-red-100 text-red-800 px-3 py-1 rounded">none</p>
+                            : ''
+                    }
                     {listing?.interests?.map((interest, index) => (
                         <li key={index} className="badge bg-green-100 text-green-800 px-3 py-1 rounded">{interest}</li>
                     ))}
