@@ -1,6 +1,4 @@
 import { useEffect, useState } from 'react';
-
-import Swal from 'sweetalert2'
 import useThemeContext from '../CustomContexts/useThemeContext';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import { notifySuccess } from '../utilities/notify';
@@ -8,7 +6,7 @@ import { useParams } from 'react-router';
 
 const UpdateListing = () => {
     const { isDark } = useThemeContext()
-    const { updateListing, findListing } = useDatabaseContext()
+    const { updateListing, findListing, user } = useDatabaseContext()
     const { id } = useParams()
 
     const initialFormData = {
@@ -72,10 +70,8 @@ const UpdateListing = () => {
         updateListing(_id, updateData)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
                 if (data.modifiedCount) {
                     notifySuccess('Listing updated successfully')
-                    Swal.fire("SweetAlert2 is working!");
                 }
             })
     };
@@ -256,6 +252,31 @@ const UpdateListing = () => {
                         className="mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
                     ></textarea>
                 </div>
+                <div>
+                    <label className="block text-sm font-medium opacity-80">User Name</label>
+                    <input
+                        type="text"
+                        name="contactInfo"
+                        defaultValue={user ? user.name :''}
+                        required
+                        disabled
+                        placeholder="Phone number or other contact method"
+                        className="disabled:cursor-not-allowed disabled:opacity-40 mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                </div>
+                <div>
+                    <label className="block text-sm font-medium opacity-80">User Email</label>
+                    <input
+                        type="text"
+                        name="contactInfo"
+                        defaultValue={user ? user.email :''}
+                        required
+                        disabled
+                        placeholder="Phone number or other contact method"
+                        className="disabled:cursor-not-allowed disabled:opacity-40 mt-1 block w-full px-4 py-2 border border-gray-500 rounded-md focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                    />
+                </div>
+                
 
 
                 <div className="pt-4 col-span-2">

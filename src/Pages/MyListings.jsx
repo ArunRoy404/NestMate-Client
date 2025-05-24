@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import ListingsTable from '../Components/Listings/ListingsTable';
-import { notifySuccess } from '../utilities/notify';
+import { notifyError} from '../utilities/notify';
+import Swal from 'sweetalert2'
 
 const MyListings = () => {
     const [listings, setListings] = useState([])
@@ -22,15 +23,33 @@ const MyListings = () => {
     }, [user])
 
     const handleDeleteListing = (id) => {
-        deleteListing(id)
-            .then(res => res.json())
-            .then(data => {
-                if (data.deletedCount) {
-                    setListings(listings.filter(listing => listing._id !== id))
-                    notifySuccess('Listing Deleted Successfully')
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deleteListing(id)
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount) {
+                            setListings(listings.filter(listing => listing._id !== id))
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                        }
+                    })
 
-                }
-            })
+            }else{
+                notifyError("Delete Canceled")
+            }
+        });
     }
 
     return (
