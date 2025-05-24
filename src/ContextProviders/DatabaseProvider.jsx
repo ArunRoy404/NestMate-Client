@@ -57,7 +57,7 @@ const DatabaseProvider = ({ children }) => {
     }
 
     const updateListing = (id, data) => {
-        return fetch(`http://localhost:3000/listings/${id}`, {
+        return fetch(`https://nest-mate-server.vercel.app/listings/${id}`, {
             method: 'PUT',
             headers: {
                 "Content-type": "application/json"
