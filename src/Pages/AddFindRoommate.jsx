@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useThemeContext from '../CustomContexts/useThemeContext';
+import useThemeContext from '../CustomContexts/UseThemeContext';
 import useDatabaseContext from '../CustomContexts/UseDatabaseContext';
 import { notifySuccess } from '../utilities/notify';
 import Loader from '../Components/Loaders/Loader';
